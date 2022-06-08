@@ -23,6 +23,11 @@ function buildDom(inputValue) {
     //Remove Button Function
     removeBtn.addEventListener('click', function () {
         card.remove();
+        let dataLocalStorage = JSON.parse(localStorage.getItem('key'))
+        dataLocalStorage = dataLocalStorage.filter(e => e != tag.textContent)
+        localStorage.setItem('key', JSON.stringify(dataLocalStorage))
+
+
     })
 }
 
